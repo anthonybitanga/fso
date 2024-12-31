@@ -3,7 +3,7 @@ const App = () => {
   const stuff = [
     {part: 'Fundamentals of React', exercise: 10},
     {part: 'Using props to pass data', exercise: 7},
-    {part: 'State of a component', exericse: 14}
+    {part: 'State of a component', exercise: 14}
   ]
 
   const Header = () => {
@@ -14,30 +14,45 @@ const App = () => {
     )
   }
 
- 
-
   const Content = () => {
-   return (
-    <div>
-      {stuff[0].part} {stuff[0].exercise} {stuff[1].part} {stuff[1].exercise} {stuff[2].part} {stuff[2].exercise}
-    </div>
-   )
+    return (
+ 
+     <div>
+       <Part parts={0}/>
+       <Part parts={1}/>
+       <Part parts={2}/>
+     </div>
+    )
+   }
+ 
+  const Part = (parts) => {
+
+    return (
+      <div>
+    
+            {stuff[parts.parts].part}  {stuff[parts.parts].exercise}<br/>
+      </div>
+    )
+
   }
 
-  // const Total = () => {
-  //   return (
-  //     {exercises1} + {exercises2} + {exercises3}
-  //   )
+ const Total = () => {
+  return (
+    <div>
+      {stuff[0].exercise + stuff[1].exercise + stuff[2].exercise}
+    </div>
+    
+  )
 
-  // }
+ }
 
   return (
 
     <div>
        <div>
       <Header />
-      <Content  />
-      {/* <Total /> */}
+      <Content />
+      <Total />
     </div>
     </div>
   )
